@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Coming soon placeholder</title>
+  <desc id="desc">A standard placeholder image that reads Coming soon.</desc>
+  <rect width="1200" height="800" fill="#f3ead8"/>
+  <rect x="42" y="42" width="1116" height="716" rx="36" fill="#fffaf0" stroke="#d7c7a5" stroke-width="4"/>
+  <g fill="none" stroke="#d7c7a5" stroke-width="3" opacity="0.75">
+    <path d="M160 236h880M160 400h880M160 564h880"/>
+    <path d="M300 150v500M600 150v500M900 150v500"/>
+  </g>
+  <circle cx="600" cy="400" r="170" fill="#f8f0df" stroke="#b99552" stroke-width="5"/>
+  <text x="600" y="385" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800" fill="#2b2417">Coming</text>
+  <text x="600" y="475" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800" fill="#2b2417">soon</text>
+</svg>

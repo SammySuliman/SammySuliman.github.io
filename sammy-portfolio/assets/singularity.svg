@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Singularity Solutions logo">
+  <rect width="240" height="240" rx="44" fill="#111827"/>
+  <circle cx="120" cy="88" r="48" fill="#D9C06C" opacity="0.16"/>
+  <text x="120" y="101" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#D9C06C">SS</text>
+  <text x="120" y="158" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#D9C06C">Singularity</text>
+  <text x="120" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="#D9C06C" opacity="0.86">Solutions</text>
+</svg>

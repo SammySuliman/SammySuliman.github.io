@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammy's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary:'var(--primary-color)', secondary:'var(--secondary-color)', 'icon-resting':'var(--icon-resting-color)', background:'var(--background-color)', surface:'var(--surface-color)', accent:'var(--accent-color)', border:'var(--border-color)' } } } };
+  </script>
+</head>
+<body class="antialiased bg-background text-primary">
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between">
+        <div class="flex-1"><a href="#home" class="font-extrabold tracking-tight text-lg">Sammy Suliman</a></div>
+        <nav id="nav-shell" class="hidden md:flex relative items-center rounded-full border border-border bg-surface/85 p-1 shadow-lg backdrop-blur-xl">
+          <span id="nav-highlighter" class="nav-highlighter"></span>
+          <a href="#home" class="nav-link">About</a>
+
+          <a href="#resume" class="nav-link">Resume</a>
+          <a href="#projects" class="nav-link">Major Projects</a>
+          <a href="#more-projects" class="nav-link">Additional</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex-1 flex justify-end">
+          <button id="theme-toggle" class="relative w-10 h-10 flex items-center justify-center rounded-full text-secondary hover:text-accent hover:bg-surface transition-colors duration-500 ml-4" aria-label="Toggle theme"><span id="theme-icon">☾</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20">
+      <canvas id="matter-canvas" class="absolute inset-0 pointer-events-none opacity-70"></canvas>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(var(--accent-color-rgb),0.18),transparent_34%)]"></div>
+      <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1fr_460px] gap-10 items-center w-full">
+        <div class="text-center lg:text-left py-24">
+          <p class="text-accent-border font-bold uppercase tracking-[0.18em] mb-5">Embedded Systems · Robotics · Mechatronics · Machine Learning</p>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-[-0.055em] leading-[0.95] mb-6">Hi, I'm<br><span class="text-accent metallic-text">Sammy Suliman.</span></h1>
+          <p class="max-w-2xl mx-auto lg:mx-0 text-lg sm:text-xl text-secondary leading-8 mb-8">I am a current Masters student in Electrical Engineering at NYU Tandon. My current field of interest lies in robotics, mechatronics, and embedded systems engineering. I am passionate about integrating artificial intelligence into physical systems to improve people's lives and even change the world around me for the better. One industry I am currently excited about is medical robotics. Before returning to school for my graduate degree, I had many diverse professional experiences in the industries of robotics, semiconductors, biotech, and national security. If you are interested in my work or background, please reach out with the Contact form below.</p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+            <a href="#projects" class="gold-button">View Projects</a>
+            <a href="assets/Sammy-Suliman-Resume.pdf" class="soft-button">Resume</a>
+            <a href="https://github.com/SammySuliman" target="_blank" rel="noopener noreferrer" class="soft-button">GitHub</a>
+            <a href="https://www.linkedin.com/in/sammy-suliman-202b63235/" target="_blank" rel="noopener noreferrer" class="soft-button">LinkedIn</a>
+          </div>
+        </div>
+        <div class="hero-stack hidden lg:block" aria-label="Resume job role reel">
+          <div class="role-reel-shell">
+            <div class="role-reel" id="role-reel">
+              <article class="role-card"><img class="company-logo" src="assets/nyu-robomaster-ultraviolet-logo.png" alt="NYU RoboMaster UltraViolet logo"><div><span>NYU RoboMaster UltraViolet</span><strong>Computer Vision Team Lead</strong><small>Aug 2026 - present</small></div></article>
+              <article class="role-card"><img class="company-logo" src="assets/singularity.svg" alt="Singularity Solutions logo"><div><span>Singularity Solutions, LLC</span><strong>Robotics Software Engineer</strong><small>Aug 2024 - Dec 2025 · Santa Barbara, CA</small></div></article>
+              <article class="role-card"><img class="company-logo" src="assets/micron-logo.png" alt="Micron Technology logo"><div><span>Micron Technology</span><strong>Machine Learning Intern</strong><small>Apr 2025 - Oct 2025; May 2026 - Aug 2026 · Boise, ID</small></div></article>
+              <article class="role-card"><img class="company-logo" src="assets/vermeer-logo.svg" alt="Vermeer logo"><div><span>Vermeer Corporation</span><strong>Contract Systems Software Engineer</strong><small>Aug 2024 - Apr 2025 · Remote</small></div></article>
+              <article class="role-card"><img class="company-logo" src="assets/nnss-logo.png" alt="Nevada National Security Site logo"><div><span>Nevada National Security Site</span><strong>Machine Learning Intern</strong><small>May 2024 - Aug 2024 · Las Vegas, NV</small></div></article>
+              <article class="role-card"><img class="company-logo" src="assets/pnnl-logo.svg" alt="Pacific Northwest National Laboratory logo"><div><span>Pacific Northwest National Laboratory</span><strong>Modelling & Simulation Intern</strong><small>June 2023 - Aug 2023 · Richland, WA</small></div></article>
+              <article class="role-card"><img class="company-logo amgen-logo" src="assets/amgen-logo.svg" alt="Amgen, Inc. logo"><div><span>Amgen, Inc.</span><strong>Deep Learning Intern</strong><small>Jan 2023 - May 2023 · Thousand Oaks, CA</small></div></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="resume" class="py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center mb-16">
+        <p class="section-kicker">Resume</p>
+        <h2 class="section-title">Documents</h2>
+        <p class="section-copy mx-auto">View my resume, undergraduate transcript, or graduate transcript.</p>
+      </div>
+      <div class="document-links max-w-5xl mx-auto">
+        <a class="document-card card-hover-effect" href="assets/Sammy-Suliman-Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="document-icon">▣</span>
+          <h3>Resume</h3>
+          <p>Open PDF</p>
+        </a>
+        <a class="document-card card-hover-effect" href="assets/unofficial_transcript.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open undergraduate unofficial transcript PDF">
+          <span class="document-icon">▣</span>
+          <h3>Undergraduate Transcript</h3>
+          <p>Open PDF</p>
+        </a>
+        <a class="document-card card-hover-effect" href="assets/graduate_transcript.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open graduate transcript PDF">
+          <span class="document-icon">▣</span>
+          <h3>Graduate Transcript</h3>
+          <p>Open PDF</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 bg-surface/40">
+      <div class="max-w-5xl mx-auto text-center mb-16"><p class="section-kicker">Major Projects</p><h2 class="section-title">Selected Work</h2></div>
+      <div id="project-grid" class="max-w-7xl mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-8"></div>
+    </section>
+
+    <section id="more-projects" class="py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center mb-16"><p class="section-kicker">Additional</p><h2 class="section-title">Additional Projects</h2></div>
+      <div class="additional-carousel-wrap max-w-7xl mx-auto">
+        <button class="carousel-control carousel-prev" id="additional-prev" aria-label="Previous project">‹</button>
+        <div id="additional-grid" class="additional-carousel" tabindex="0" aria-label="Additional projects carousel"></div>
+        <button class="carousel-control carousel-next" id="additional-next" aria-label="Next project">›</button>
+      </div>
+
+    </section>
+
+    <section id="skills" class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-surface/40">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="flex justify-center items-center gap-4">
+            <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+              <span class="relative inline-block">Skills & Expertise<span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-accent rounded-full"></span></span>
+            </h2>
+            <button id="skill-cycle-toggle" class="p-2 rounded-full transition-all duration-300 bg-accent/20 text-accent ring-2 ring-accent" aria-label="Stop cycling skills" title="Stop cycling skills">⏸</button>
+          </div>
+          <p class="mt-4 text-md text-secondary">Select any category to learn more</p>
+        </div>
+        <div id="skill-category-tabs" class="flex justify-center flex-wrap gap-1 md:gap-2 mb-12"></div>
+        <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 auto-rows-fr"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8">
+      <div class="contact-shell max-w-5xl mx-auto">
+        <div class="contact-copy">
+          <p class="section-kicker">Contact</p>
+          <h2 class="section-title">Ready to build something?</h2>
+          <p class="section-copy">I'm always open to discussing robotics, embedded systems, mechatronics, medical robotics, and new engineering opportunities. Send a message below and it will route directly to my email.</p>
+        </div>
+        <form class="contact-form" action="https://formsubmit.co/sammysuliman@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio contact message">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label class="contact-message-field">
+            <span>Message</span>
+            <textarea name="message" rows="6" placeholder="Tell me what you would like to discuss" required></textarea>
+          </label>
+          <button type="submit" class="gold-button contact-submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-12 text-center text-secondary border-t border-border bg-surface/40"><p>© <span id="year"></span> Sammy Suliman</p><p class="mt-2"><a href="mailto:sammysuliman@gmail.com" class="hover:text-accent">sammysuliman@gmail.com</a> · <a href="https://github.com/SammySuliman" class="hover:text-accent">GitHub</a> · <a href="https://www.linkedin.com/in/sammy-suliman-202b63235/" class="hover:text-accent">LinkedIn</a></p></footer>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

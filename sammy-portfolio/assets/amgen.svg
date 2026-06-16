@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Amgen Inc. logo">
+  <rect width="240" height="240" rx="44" fill="#005EB8"/>
+  <circle cx="120" cy="88" r="48" fill="#ffffff" opacity="0.16"/>
+  <text x="120" y="101" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#ffffff">A</text>
+  <text x="120" y="158" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#ffffff">Amgen</text>
+  <text x="120" y="184" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="#ffffff" opacity="0.86">Inc.</text>
+</svg>
